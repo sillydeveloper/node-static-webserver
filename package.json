@@ -3,18 +3,29 @@
   "author": "Eduard Baun <eduard@baun.de>",
   "version": "0.0.3",
   "description": "A simple static file webserver.",
-  "keywords"      : ["static", "web", "server", "webserver"],
+  "keywords": [
+    "static",
+    "web",
+    "server",
+    "webserver"
+  ],
   "main": "index.js",
-  "repository": {"type": "git", "url": "git://github.com/edy/node-static-webserver.git"},
-  "licenses": [{
-    "type": "MIT",
-    "url": "https://raw.github.com/edy/node-static-webserver/master/LICENSE"
-  }],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/edy/node-static-webserver.git"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://raw.github.com/edy/node-static-webserver/master/LICENSE"
+    }
+  ],
   "bin": {
     "webserver": "./bin/webserver"
   },
   "license": "MIT",
   "dependencies": {
-    "express": "~3.5.0"
+    "express": "~3.5.0",
+    "x-frame-options": "^1.0.0"
   }
 }

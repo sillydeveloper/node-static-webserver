@@ -6,9 +6,12 @@ var fs = require('fs');
 var app = express();
 var cwd = process.cwd();
 var port = process.argv[2] || 8080;
+var xFrameOptions = require('x-frame-options')
 
 app.get('*', function (req, res, next) {
 	var file = path.join(cwd, req.url);
+
+	res.set('X-Frame-Options', 'SAMEORIGIN')
 
 	fs.stat(file, function (err, stats) {
 		if (err) {
@@ -36,6 +39,7 @@ app.get('*', function (req, res, next) {
 app.use(express.compress());
 app.use(express.directory(cwd));
 app.use(express.static(cwd));
+app.use(xFrameOptions());
 
 app.listen(port, function () {
 	console.log('static web server running: http://localhost:' + port + '/');
